@@ -33,7 +33,8 @@
     "xlsx": "^0.16.1",
     "zone.js": "~0.10.2",
         "@angular/cli": "~9.1.2",
-    "@angular/compiler": "~9.1.2"
+    "@angular/compiler": "~9.1.2",
+        "@angular/compiler-cli": "~9.1.2"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.901.2",
