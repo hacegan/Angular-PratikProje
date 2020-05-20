@@ -8,11 +8,10 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "preinstall": "npm install --save-dev @angular-devkit/build-angular",
-    "postinstall": "ng build && mv dist/* ."
   },
   "private": true,
   "dependencies": {
+    "@angular/cli": "~9.1.2",
     "@angular/animations": "^9.1.7",
     "@angular/cdk": "^9.2.3",
     "@angular/common": "~9.1.2",
