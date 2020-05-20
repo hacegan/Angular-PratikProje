@@ -1,0 +1,100 @@
+<p-table #dt [value]="customers" selectionMode="single" dataKey="id" [(selection)]="selectedRecord" styleClass="ui-table-customers" [rowHover]="true" [rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50]" [loading]="loading" [paginator]="true"
+    currentPageReportTemplate="{{'toplam' | translate}} {totalRecords} {{'kayit' | translate}}{{'tan' | translate}}   {first} {{'ile' | translate}} {last} {{'arasindaki' | translate}} {{'kayitlar' | translate}} {{'gosteriliyor' | translate}}" [filterDelay]="0"
+    [globalFilterFields]="['name','date','status']" (onSelectionChange)="onSelectionChange($event.value)">
+
+    <ng-template pTemplate="caption">
+
+        {{'gorevler' | translate}}
+
+        <div class="ui-table-globalfilter-container" style="float: left;display: contents;">
+            <input style="margin-left: 15px;" pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')" [placeholder]="'arama' | translate" />
+        </div>
+
+        <div class="ui-table-globalfilter-container">
+            <button type="button" pButton icon="pi pi-file-excel" iconPos="left" label="EXCEL" (click)="exportExcel()" style="margin-right: 0.5em;" class="ui-button-success"></button>
+        </div>
+
+        <div class="ui-table-globalfilter-container" style="margin-right: 10px;">
+            <button type="button" pButton icon="pi pi-file-pdf" iconPos="left" label="PDF" (click)="exportPdf()" class="ui-button-warning"></button>
+        </div>
+
+        <div class="ui-table-globalfilter-container" style="margin-right: 10px;">
+            <p-button [label]="'sil' | translate" icon="pi pi-trash" [disabled]="!selectedRecord || !selectedRecord[0]"></p-button>
+        </div>
+
+        <div class="ui-table-globalfilter-container" style="margin-right: 10px;">
+            <p-button [label]="'guncelle' | translate" icon="pi pi-pencil" [disabled]="!selectedRecord || !selectedRecord[0]"></p-button>
+        </div>
+
+    </ng-template>
+
+    <ng-template pTemplate="header">
+        <tr>
+            <th></th>
+            <th pSortableColumn="name">{{'isim' | translate}}
+                <p-sortIcon field="name"></p-sortIcon>
+            </th>
+            <th pSortableColumn="date">{{'baslangictarihi' | translate}}
+                <p-sortIcon field="date"></p-sortIcon>
+            </th>
+            <th pSortableColumn="date">{{'bitistarihi' | translate}}
+                <p-sortIcon field="date"></p-sortIcon>
+            </th>
+            <th pSortableColumn="status">{{'durum' | translate}}
+                <p-sortIcon field="status"></p-sortIcon>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                <!-- <p-tableHeaderCheckbox disabled="true"></p-tableHeaderCheckbox> -->
+            </th>
+            <th>
+                <input pInputText type="text" (input)="dt.filter($event.target.value, 'name', 'startsWith')" [placeholder]="'isimilearama' | translate" class="ui-column-filter">
+            </th>
+            <th>
+                <p-calendar (onSelect)="onDateSelect($event)" (onClearClick)="dt.filter('', 'date', 'equals')" [showButtonBar]="true" styleClass="ui-column-filter" [placeholder]="'baslangictarihi' | translate" [readonlyInput]="true" dateFormat="yy-mm-dd"></p-calendar>
+            </th>
+            <th>
+                <p-calendar (onSelect)="onDateSelect($event)" (onClearClick)="dt.filter('', 'date', 'equals')" [showButtonBar]="true" styleClass="ui-column-filter" [placeholder]="'bitistarihi' | translate" [readonlyInput]="true" dateFormat="yy-mm-dd"></p-calendar>
+            </th>
+            <th>
+                <p-dropdown [options]="statuses" (onChange)="dt.filter($event.value, 'status', 'equals')" styleClass="ui-column-filter" [placeholder]="'durumseciniz' | translate" [showClear]="true">
+                    <ng-template let-option pTemplate="item">
+                        <span [class]="'customer-badge status-' + option.value">{{option.label | translate}}</span>
+                    </ng-template>
+                </p-dropdown>
+            </th>
+        </tr>
+
+    </ng-template>
+
+    <ng-template pTemplate="body" let-customer>
+        <tr class="ui-selectable-row">
+            <td>
+                <p-checkbox [value]="customer" (click)="onClick()" (onChange)="onChange()" [(ngModel)]="selectedRecord" name="group" ngDefaultControl></p-checkbox>
+            </td>
+            <td>
+                <span class="ui-column-title">{{'isim' | translate}}</span> {{customer.name}}
+            </td>
+            <td>
+                <span class="ui-column-title">{{'baslangictarihi' | translate }}</span> {{customer.date}}
+            </td>
+            <td>
+                <span class="ui-column-title">{{'bitistarihi' | translate }}</span> {{customer.date}}
+            </td>
+            <td>
+                <span class="ui-column-title">{{'durum' | translate}}</span>
+                <span [class]="'customer-badge status-' + customer.status">{{customer.status | translate}} </span>
+            </td>
+        </tr>
+
+
+    </ng-template>
+
+    <ng-template pTemplate="emptymessage">
+        <tr>
+            <td colspan="8" style="text-align:left">{{'kayitbulunamadi' | translate}}</td>
+        </tr>
+    </ng-template>
+
+</p-table>

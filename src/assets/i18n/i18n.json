@@ -1,0 +1,330 @@
+{
+    "kullaniciadi": {
+        "tr": "Kullanıcı Adı",
+        "en": "Username"
+    },
+    "sifre": {
+        "tr": "Şifre",
+        "en": "Password"
+    },
+    "kayitol": {
+        "tr": "Kayıt Ol",
+        "en": "Register"
+    },
+    "girisyap": {
+        "tr": "Giriş Yap",
+        "en": "Log in"
+    },
+    "anasayfa": {
+        "tr": "AnaSayfa",
+        "en": "Home"
+    },
+    "profil": {
+        "tr": "Profil",
+        "en": "Profile"
+    },
+    "guncelle": {
+        "tr": "Güncelle",
+        "en": "Update"
+    },
+    "calisanlar": {
+        "tr": "Çalışanlar",
+        "en": "Employees"
+    },
+    "suankigorevlerim": {
+        "tr": "Şuanki Görevlerim",
+        "en": "Current Tasks"
+    },
+    "yaptigimgorevler": {
+        "tr": "Yaptığım Görevler",
+        "en": "Finished Tasks"
+    },
+    "odenecekler": {
+        "tr": "Ödenecekler",
+        "en": "Payables"
+    },
+    "alacaklar": {
+        "tr": "Alacaklar",
+        "en": "Receivables"
+    },
+    "musteriler": {
+        "tr": "Müşteriler",
+        "en": "Customers"
+    },
+    "urunler": {
+        "tr": "Ürünler",
+        "en": "Products"
+    },
+    "finansalvarliklar": {
+        "tr": "Finansal Varlıklar",
+        "en": "Financial Holdings"
+    },
+    "kayitbasarili": {
+        "tr": "Kayıt Başarılı",
+        "en": "Registration Successfull"
+    },
+    "kayitbasarisiz": {
+        "tr": "Kayıt Başarısız",
+        "en": "Registration Failed"
+    },
+    "girisbasarisiz": {
+        "tr": "Giriş Başarısız",
+        "en": "Login Failed"
+    },
+    "girisbasarili": {
+        "tr": "Giriş Başarılı",
+        "en": "Login Succeed"
+    },
+    "kullaniciadibosolamaz": {
+        "tr": "Kullanıcı Adı Boş Olamaz ! ",
+        "en": "Username Field Can't Be Empty ! "
+    },
+    "sifrealanibosolamaz": {
+        "tr": "Şifre Alanı Boş Olamaz ! ",
+        "en": "Password Field Can't Be Empty ! "
+    },
+    "isim": {
+        "tr": "İsim",
+        "en": "Name"
+    },
+    "tarih": {
+        "tr": "Tarih",
+        "en": "Date"
+    },
+    "durum": {
+        "tr": "Durum",
+        "en": "Status"
+    },
+    "gosteriliyor": {
+        "tr": "Gösteriliyor",
+        "en": "Showing"
+    },
+    "ile": {
+        "tr": "ile",
+        "en": "to"
+    },
+    "kayitlar": {
+        "tr": "Kayıtlar",
+        "en": "Entries"
+    },
+    "arasindaki": {
+        "tr": "Arasındaki",
+        "en": "of"
+    },
+    "arama": {
+        "tr": "Arama",
+        "en": "Search"
+    },
+    "isimilearama": {
+        "tr": "İsim İle Arama",
+        "en": "Search By Name"
+    },
+    "durumseciniz": {
+        "tr": "Durum Seçiniz",
+        "en": "Select A Status"
+    },
+    "yeni": {
+        "tr": "Yeni",
+        "en": "New"
+    },
+    "yapilmis": {
+        "tr": "Yapılmış",
+        "en": "Done"
+    },
+    "kayittarihi": {
+        "tr": "Kayıt Tarihi",
+        "en": "Registration Date"
+    },
+    "kayitbulunamadi": {
+        "tr": "Kayıt Bulunamadı",
+        "en": "Records Not Found"
+    },
+    "tan": {
+        "tr": "tan",
+        "en": "From"
+    },
+    "toplam": {
+        "tr": "Toplam",
+        "en": "Total"
+    },
+    "kayit": {
+        "tr": "Kayıt",
+        "en": "Record"
+    },
+    "gorevler": {
+        "tr": "Görevler",
+        "en": "Tasks"
+    },
+    "varliklar": {
+        "tr": "Varlıklar",
+        "en": "Holdings"
+    },
+    "baslangictarihi": {
+        "tr": "Başlangıç Tarihi",
+        "en": "Start Date"
+    },
+    "bitistarihi": {
+        "tr": "Bitiş Tarihi",
+        "en": "End Date"
+    },
+    "sil": {
+        "tr": "Sil",
+        "en": "Delete"
+    },
+    "profilim": {
+        "tr": "Profilim",
+        "en": "My Profile"
+    },
+    "adiniz": {
+        "tr": "Adınız",
+        "en": "Your Name"
+    },
+    "soyadiniz": {
+        "tr": "Soyadınız",
+        "en": "Your Surname"
+    },
+    "maasiniz": {
+        "tr": "Maaşınız",
+        "en": "Your Salary"
+    },
+    "telefonnumaraniz": {
+        "tr": "Telefon Numaranız",
+        "en": "Your Phone Number"
+    },
+    "evadresiniz": {
+        "tr": "Ev Adresiniz",
+        "en": "Your Home Address"
+    },
+    "isebaslamatarihiniz": {
+        "tr": "İşe Başlama Tarihiniz",
+        "en": "Your Start Of Date"
+    },
+    "istenayrilistarihiniz": {
+        "tr": "İşten Ayrılış Tarihiniz",
+        "en": "Your Ending Date Of Employment"
+    },
+    "musteriadi": {
+        "tr": "Müşteri Adı",
+        "en": "Customer Name"
+    },
+    "musterininadresi": {
+        "tr": "Müşterinin Adresi",
+        "en": "Customer Address"
+    },
+    "musteritelefonno": {
+        "tr": "Müşterinin Telefon Numarası",
+        "en": "Customer Phone Number"
+    },
+    "musteriyleanlasmabaslangictarihi": {
+        "tr": "Müşteri İle Anlaşma Başlangıç Tarihi",
+        "en": "The Start Date Of Contract With Customer"
+    },
+    "musteriyleanlasmabitistarihi": {
+        "tr": "Müşteri İle Anlaşma Bitiş Tarihi",
+        "en": "The End Date Of Contract With Customer"
+    },
+    "musterininaldigipaket": {
+        "tr": "Müşterinin Aldığı Paket",
+        "en": "The Assets That Customer Took"
+    },
+    "musterininyaptigiodeme": {
+        "tr": "Müşterinin Yaptığı Ödeme",
+        "en": "The Payment Of The Customer Made"
+    },
+    "ekle": {
+        "tr": "Ekle",
+        "en": "Add"
+    },
+    "yenimusteri": {
+        "tr": "Yeni Müşteri",
+        "en": "New Customer"
+    },
+    "kaydet": {
+        "tr": "Kaydet",
+        "en": "Register"
+    },
+    "vazgec": {
+        "tr": "Vazgeç",
+        "en": "Give Up"
+    },
+    "urunadi": {
+        "tr": "Ürün Adı",
+        "en": "Product Name"
+    },
+    "urununbironcekifiyati": {
+        "tr": "Ürünün Bir Önceki Fiyatı",
+        "en": "Previous Price Of Product"
+    },
+    "urununsuankifiyati": {
+        "tr": "Ürünün Şuanki Fiyatı",
+        "en": "Current Price Of Product"
+    },
+    "urununendusukfiyati": {
+        "tr": "Ürünün En Düşük Fiyatı",
+        "en": "Lowest Price Of Product"
+    },
+    "urununenyuksekfiyati": {
+        "tr": "Ürünün En Yüksek Fiyatı",
+        "en": "Highest Price Of Product"
+    },
+    "satilanurunmiktari": {
+        "tr": "Satılan Ürün Miktarı",
+        "en": "Product Quantity Of Sold"
+    },
+    "satilantoplamurununfiyati": {
+        "tr": "Satılan Toplam Ürünün Fiyatı",
+        "en": "Price Of Sold Total Product"
+    },
+    "urunstokmiktari": {
+        "tr": "Ürün Stok Miktarı",
+        "en": "Stock Quantity Of Product"
+    },
+    "urunfiyatinisondegistirenkisi": {
+        "tr": "Ürün Fiyatını Son Değiştiren Kişi",
+        "en": "Person Who Changed Product Price At Last"
+    },
+    "urunresmi": {
+        "tr": "Ürün Resmi",
+        "en": "Product Image"
+    },
+    "urunismiilearama": {
+        "tr": "Ürün İsmi İle Arama",
+        "en": "Search By Product Image"
+    },
+    "urununbironcekifiyatiilearama": {
+        "tr": "Ürün Bir Önceki Fiyatı İle Arama",
+        "en": "Search By Product Previous Price"
+    },
+    "urununsuankifiyatiilearama": {
+        "tr": "Ürün Şuanki Fiyatı İle Arama",
+        "en": "Search By Product Current Price"
+    },
+    "urununendusukfiyatiilearama": {
+        "tr": "Ürünün En Düşük Fiyatı İle Arama",
+        "en": "Search By Product Lowest Price"
+    },
+    "urununenyuksekfiyatiilearama": {
+        "tr": "Ürünün En Yüksek Fiyatı İle Arama",
+        "en": "Search By Product Highest Price"
+    },
+    "satilanurunmiktariilearama": {
+        "tr": "Satılan Ürün Miktarı İle Arama",
+        "en": "Search By Product Sales Count"
+    },
+    "satilantoplamurununfiyatiilearama": {
+        "tr": "Satılan Toplam Ürün Miktarı İle Arama",
+        "en": "Search By Total Product Sales Count"
+    },
+    "urunstokmiktariilearama": {
+        "tr": "Ürün Stok Miktarı İle Arama",
+        "en": "Search By Product Stock Quantity"
+    },
+    "urunfiyatinisondegistirenkisiilearama": {
+        "tr": "Ürün Fiyatını Son Değiştiren Kişi İle Arama",
+        "en": "Search By Person Who Changes Product Price Lastly"
+    },
+    "musterionemderecesi": {
+        "tr": "Müşteri Önem Derecesi",
+        "en": "Customer Priority Rank"
+    }
+}

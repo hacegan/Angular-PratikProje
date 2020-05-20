@@ -1,0 +1,136 @@
+<p-table #dt [value]="urunler" selectionMode="single" dataKey="id" styleClass="ui-table-customers" [rowHover]="true" [rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50]" [paginator]="true" currentPageReportTemplate="{{'toplam' | translate}} {totalRecords} {{'kayit' | translate}}{{'tan' | translate}}   {first} {{'ile' | translate}} {last} {{'arasindaki' | translate}} {{'kayitlar' | translate}} {{'gosteriliyor' | translate}}"
+    [filterDelay]="0" [globalFilterFields]="['urunadi','urununbironcekifiyati','urununsuankifiyati','urununendusukfiyati','urununenyuksekfiyati','satilanurunmiktari','satilantoplamurununfiyati','urunstokmiktari','urunfiyatinisondegistirenkisi']">
+
+    <ng-template pTemplate="caption">
+
+        {{'urunler' | translate}}
+
+        <div class="ui-table-globalfilter-container" style="float: left;display: contents;">
+            <input style="margin-left: 15px;" pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')" [placeholder]="'arama' | translate" />
+        </div>
+
+        <div class="ui-table-globalfilter-container">
+            <button type="button" pButton icon="pi pi-file-excel" iconPos="left" label="EXCEL" (click)="exportExcel()" style="margin-right: 0.5em;" class="ui-button-success"></button>
+        </div>
+
+        <div class="ui-table-globalfilter-container" style="margin-right: 10px;">
+            <button type="button" pButton icon="pi pi-file-pdf" iconPos="left" label="PDF" (click)="exportPdf()" class="ui-button-warning"></button>
+        </div>
+
+        <div class="ui-table-globalfilter-container" style="margin-right: 10px;">
+            <p-button [label]="'sil' | translate" icon="pi pi-trash"></p-button>
+        </div>
+
+    </ng-template>
+
+    <ng-template pTemplate="header">
+        <tr>
+            <th></th>
+            <th>{{'urunresmi' | translate}}</th>
+            <th pSortableColumn="urunadi">{{'urunadi' | translate}}
+                <p-sortIcon field="urunadi"></p-sortIcon>
+            </th>
+            <th pSortableColumn="urununbironcekifiyati">{{'urununbironcekifiyati' | translate}}
+                <p-sortIcon field="urununbironcekifiyati"></p-sortIcon>
+            </th>
+            <th pSortableColumn="urununsuankifiyati">{{'urununsuankifiyati' | translate}}
+                <p-sortIcon field="urununsuankifiyati"></p-sortIcon>
+            </th>
+            <th pSortableColumn="urununendusukfiyati">{{'urununendusukfiyati' | translate}}
+                <p-sortIcon field="urununendusukfiyati"></p-sortIcon>
+            </th>
+            <th pSortableColumn="urununenyuksekfiyati">{{'urununenyuksekfiyati' | translate}}
+                <p-sortIcon field="urununenyuksekfiyati"></p-sortIcon>
+            </th>
+            <th pSortableColumn="satilanurunmiktari">{{'satilanurunmiktari' | translate}}
+                <p-sortIcon field="satilanurunmiktari"></p-sortIcon>
+            </th>
+            <th pSortableColumn="satilantoplamurununfiyati">{{'satilantoplamurununfiyati' | translate}}
+                <p-sortIcon field="satilantoplamurununfiyati"></p-sortIcon>
+            </th>
+            <th pSortableColumn="urunstokmiktari">{{'urunstokmiktari' | translate}}
+                <p-sortIcon field="urunstokmiktari"></p-sortIcon>
+            </th>
+            <th pSortableColumn="urunfiyatinisondegistirenkisi">{{'urunfiyatinisondegistirenkisi' | translate}}
+                <p-sortIcon field="urunfiyatinisondegistirenkisi"></p-sortIcon>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+            </th>
+            <th>
+            </th>
+            <th>
+                <input pInputText type="text" (input)="dt.filter($event.target.value, 'name', 'startsWith')" [placeholder]="'urunismiilearama' | translate" class="ui-column-filter">
+            </th>
+            <th>
+                <input pInputText type="text" (input)="dt.filter($event.target.value, 'name', 'startsWith')" [placeholder]="'urununbironcekifiyatiilearama' | translate" class="ui-column-filter">
+            </th>
+            <th>
+                <input pInputText type="text" (input)="dt.filter($event.target.value, 'name', 'startsWith')" [placeholder]="'urununsuankifiyatiilearama' | translate" class="ui-column-filter">
+            </th>
+            <th>
+                <input pInputText type="text" (input)="dt.filter($event.target.value, 'name', 'startsWith')" [placeholder]="'urununendusukfiyatiilearama' | translate" class="ui-column-filter">
+            </th>
+            <th>
+                <input pInputText type="text" (input)="dt.filter($event.target.value, 'name', 'startsWith')" [placeholder]="'urununenyuksekfiyatiilearama' | translate" class="ui-column-filter">
+            </th>
+            <th>
+                <input pInputText type="text" (input)="dt.filter($event.target.value, 'name', 'startsWith')" [placeholder]="'satilanurunmiktariilearama' | translate" class="ui-column-filter">
+            </th>
+            <th>
+                <input pInputText type="text" (input)="dt.filter($event.target.value, 'name', 'startsWith')" [placeholder]="'satilantoplamurununfiyatiilearama' | translate" class="ui-column-filter">
+            </th>
+            <th>
+                <input pInputText type="text" (input)="dt.filter($event.target.value, 'name', 'startsWith')" [placeholder]="'urunstokmiktariilearama' | translate" class="ui-column-filter">
+            </th>
+            <th>
+                <input pInputText type="text" (input)="dt.filter($event.target.value, 'name', 'startsWith')" [placeholder]="'urunfiyatinisondegistirenkisiilearama' | translate" class="ui-column-filter">
+            </th>
+        </tr>
+
+    </ng-template>
+
+    <ng-template pTemplate="body" let-urun>
+        <tr class="ui-selectable-row">
+            <td>
+                <p-checkbox></p-checkbox>
+            </td>
+            <td>
+                {{'urunresmi' | translate}}
+            </td>
+            <td>
+                <span class="ui-column-title">{{'urunadi' | translate}}</span> {{urun.urunadi}}
+            </td>
+            <td>
+                <span class="ui-column-title">{{'urununbironcekifiyati' | translate}}</span> {{urun.urununbironcekifiyati}}
+            </td>
+            <td>
+                <span class="ui-column-title">{{'urununsuankifiyati' | translate}}</span> {{urun.urunadi}}
+            </td>
+            <td>
+                <span class="ui-column-title">{{'urununendusukfiyati' | translate}}</span> {{urun.urununendusukfiyati}}
+            </td>
+            <td>
+                <span class="ui-column-title">{{'urununenyuksekfiyati' | translate}}</span> {{urun.urununenyuksekfiyati}}
+            </td>
+            <td>
+                <span class="ui-column-title">{{'satilanurunmiktari' | translate}}</span> {{urun.satilanurunmiktari}}
+            </td>
+            <td>
+                <span class="ui-column-title">{{'satilantoplamurununfiyati' | translate}}</span> {{urun.satilantoplamurununfiyati}}
+            </td>
+            <td>
+                <span class="ui-column-title">{{'urunstokmiktari' | translate}}</span> {{urun.urunstokmiktari}}
+            </td>
+            <td>
+                <span class="ui-column-title">{{'urunfiyatinisondegistirenkisi' | translate}}</span> {{urun.urunfiyatinisondegistirenkisi}}
+            </td>
+
+        </tr>
+
+    </ng-template>
+
+
+</p-table>

@@ -1,0 +1,10 @@
+.profilFieldSet {
+    display: flex;
+    align-items: center;
+    padding: 1em;
+}
+
+input,
+textarea {
+    flex: 1 1 auto;
+}

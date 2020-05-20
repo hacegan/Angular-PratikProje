@@ -1,0 +1,137 @@
+<p-table #dt [value]="customers" selectionMode="single" dataKey="id" [(selection)]="selectedRecord" styleClass="ui-table-customers" [rowHover]="true" [rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50]" [paginator]="true" currentPageReportTemplate="{{'toplam' | translate}} {totalRecords} {{'kayit' | translate}}{{'tan' | translate}}   {first} {{'ile' | translate}} {last} {{'arasindaki' | translate}} {{'kayitlar' | translate}} {{'gosteriliyor' | translate}}"
+    [filterDelay]="0" [globalFilterFields]="['name','date','status']">
+    <ng-template pTemplate="caption">
+
+        {{'musteriler' | translate}}
+
+
+        <div class="ui-table-globalfilter-container" style="float: left;display: contents;">
+            <input style="margin-left: 15px;" pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')" [placeholder]="'arama' | translate" />
+        </div>
+        <div class="ui-table-globalfilter-container" style="margin-right: 10px;">
+            <p-button [label]="'sil' | translate" icon="pi pi-trash" [disabled]="!selectedRecord || !selectedRecord[0]"></p-button>
+        </div>
+        <div class="ui-table-globalfilter-container" style="margin-right: 10px;">
+            <p-button [label]="'guncelle' | translate" icon="pi pi-pencil" [disabled]="!selectedRecord || !selectedRecord[0]"></p-button>
+        </div>
+        <div class="ui-table-globalfilter-container" style="margin-right: 10px;">
+            <p-button [label]="'ekle' | translate" icon="pi pi-plus" (click)="showAddDialog()"></p-button>
+        </div>
+    </ng-template>
+    <ng-template pTemplate="header">
+        <tr>
+            <th pSortableColumn="name">{{'musteriadi' | translate}}
+
+                <p-sortIcon field="name"></p-sortIcon>
+            </th>
+            <th pSortableColumn="phoneNumber">{{'musteritelefonno' | translate}}
+
+                <p-sortIcon field="phoneNumber"></p-sortIcon>
+            </th>
+            <th pSortableColumn="address">{{'musterininadresi' | translate}}
+
+                <p-sortIcon field="address"></p-sortIcon>
+            </th>
+            <th pSortableColumn="startDate">{{'musteriyleanlasmabaslangictarihi' | translate}}
+
+                <p-sortIcon field="startDate"></p-sortIcon>
+            </th>
+            <th pSortableColumn="endDate">{{'musteriyleanlasmabitistarihi' | translate}}
+
+                <p-sortIcon field="endDate"></p-sortIcon>
+            </th>
+            <th pSortableColumn="alinanpaket">{{'musterininaldigipaket' | translate}}
+
+                <p-sortIcon field="alinanpaket"></p-sortIcon>
+            </th>
+            <th pSortableColumn="yapilanodeme">{{'musterininyaptigiodeme' | translate}}
+
+                <p-sortIcon field="yapilanodeme"></p-sortIcon>
+            </th>
+            <th pSortableColumn="musterionemderecesi">{{'musterionemderecesi' | translate}}
+
+                <p-sortIcon field="musterionemderecesi"></p-sortIcon>
+            </th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-customer>
+        <tr class="ui-selectable-row">
+            <td>
+                <span class="ui-column-title">{{'musteriadi' | translate}}</span> {{customer.name}}
+
+            </td>
+            <td>
+                <span class="ui-column-title">{{'musteritelefonno' | translate}}</span> {{customer.phoneNumber}}
+
+            </td>
+            <td>
+                <span class="ui-column-title">{{'musterininadresi' | translate}}</span> {{customer.address}}
+
+            </td>
+            <td>
+                <span class="ui-column-title">{{'musteriyleanlasmabaslangictarihi' | translate}}</span> {{customer.startDate}}
+
+            </td>
+            <td>
+                <span class="ui-column-title">{{'musteriyleanlasmabitistarihi' | translate}}</span> {{customer.endDate}}
+
+            </td>
+            <td>
+                <span class="ui-column-title">{{'musterininaldigipaket' | translate}}</span> {{customer.alinanpaket}}
+
+            </td>
+            <td>
+                <span class="ui-column-title">{{'musterininyaptigiodeme' | translate}}</span>{{customer.yapilanodeme}}
+            </td>
+            <td>
+                <p-rating [ngModel]="4" readonly="true" stars="4" [cancel]="false"></p-rating>
+            </td>
+
+
+        </tr>
+    </ng-template>
+
+</p-table>
+
+<p-blockUI [blocked]="displayAddDialog"></p-blockUI>
+
+<p-dialog [header]="'yenimusteri' | translate" [(visible)]="displayAddDialog" [style]="{width: '50vw'}" [baseZIndex]="10000">
+
+    <div class="ui-inputgroup" style="margin-bottom: 10px;">
+        <span class="ui-inputgroup-addon"><i class="pi pi-user" style="line-height: 1.25;"></i></span>
+        <input type="text" pInputText [placeholder]="'musteriadi' | translate" [(ngModel)]="newCustomer.name">
+    </div>
+
+    <div class="ui-inputgroup" style="margin-bottom: 10px;">
+        <span class="ui-inputgroup-addon"><i class="pi pi-comment" style="line-height: 1.25;"></i></span>
+        <input type="text" pInputText [placeholder]="'musteritelefonno' | translate" [(ngModel)]="newCustomer.phoneNumber">
+    </div>
+
+    <div class="ui-inputgroup" style="margin-bottom: 10px;">
+        <span class="ui-inputgroup-addon"><i class="pi pi-home" style="line-height: 1.25;"></i></span>
+        <input type="text" pInputText [placeholder]="'musterininadresi' | translate" [(ngModel)]="newCustomer.address">
+    </div>
+
+    <div class="ui-inputgroup" style="margin-bottom: 10px;">
+        <span class="ui-inputgroup-addon"><i class="pi pi-step-forward" style="line-height: 1.25;"></i></span>
+        <input type="text" pInputText [placeholder]="'musteriyleanlasmabaslangictarihi' | translate" [(ngModel)]="newCustomer.startDate">
+    </div>
+
+    <div class="ui-inputgroup" style="margin-bottom: 10px;">
+        <span class="ui-inputgroup-addon"><i class="pi pi-inbox" style="line-height: 1.25;"></i></span>
+        <input type="text" pInputText [placeholder]="'musterininaldigipaket' | translate" [(ngModel)]="newCustomer.alinanpaket">
+    </div>
+
+    <div class="ui-inputgroup">
+        <span class="ui-inputgroup-addon"><i class="pi pi-dollar" style="line-height: 1.25;"></i></span>
+        <input type="text" pInputText [placeholder]="'musterininyaptigiodeme' | translate" [(ngModel)]="newCustomer.yapilanodeme">
+    </div>
+
+
+    <p-footer>
+        <button type="button" pButton icon="pi pi-check" (click)="displayAddDialog=false; registerNewCustomer()" [label]="'kaydet' | translate"></button>
+        <button type="button" pButton icon="pi pi-times" (click)="displayAddDialog=false" [label]="'vazgec' | translate" class="ui-button-secondary"></button>
+    </p-footer>
+</p-dialog>
+
+<p-toast></p-toast>
