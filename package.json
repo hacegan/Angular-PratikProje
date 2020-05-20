@@ -32,7 +32,8 @@
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "xlsx": "^0.16.1",
-    "zone.js": "~0.10.2"
+    "zone.js": "~0.10.2",
+    "@angular/cli": "~9.1.2"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.901.2",
